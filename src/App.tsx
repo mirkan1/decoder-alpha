@@ -1,3 +1,4 @@
+import React from 'react';
 import {
     IonApp,
     IonCol,
@@ -212,7 +213,7 @@ const App = () => {
                 getRoleType(JSON.parse(roleList));
             }catch(err){ }
 
-		}else{
+		} else {
             console.info('no roleList found for user');
         }
 
@@ -281,7 +282,7 @@ const App = () => {
         // }
 
         // code that is supposed to update the authorization header whenever the token changes
-        return auth.onAuthStateChanged((context) => {
+        return auth.onAuthStateChanged((context: any) => {
 
             if (context) {
                 setUser({ id: context.uid });
@@ -290,7 +291,7 @@ const App = () => {
                     dispatch(setDemo(true));
                 }
 				else {
-					context.getIdTokenResult().then((idTokenResult) => {
+					context.getIdTokenResult().then((idTokenResult: any) => {
 						console.log('setting hasRoles - ', idTokenResult.claims.hasRoles, typeof idTokenResult.claims.hasRoles);
 						dispatch(setHasRoles(Boolean(idTokenResult.claims.hasRoles)));
 					})

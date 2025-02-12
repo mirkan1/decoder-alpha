@@ -20,8 +20,8 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "downlevelIteration": true,
-	"jsxImportSource": "@emotion/react",
-  "noUnusedLocals": false
+    "jsxImportSource": "@emotion/react",
+    "noUnusedLocals": false,
   },
   "include": [
     "src"
